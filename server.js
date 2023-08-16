@@ -1,5 +1,5 @@
 const http = require("http");
-const app = require("./app/app");
+const app = require("./app");
 
 // Let NodeJS know that we are using dotenv
 // .config() = read the .env file and assign it to process.env
