@@ -1,7 +1,8 @@
 const usersServices = async () => {
-    console.log("Real Users");
-    return Promise.resolve(
-        [
+    return Promise.resolve({
+        // These will be the results of the mock API call
+        // Bad Practice to not test the full response object.  We are using 10 for learning purposes.
+        data: [
             {
             "userId": 1,
             "id": 1,
@@ -63,11 +64,10 @@ const usersServices = async () => {
             "completed": true
             },
         ],
-    );
+    });
 };
 
 const usersServicesById = async (id) => {
-    console.log("Real Users by Id");
     return Promise.resolve({
         data: {
                 "userId": 1,
