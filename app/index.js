@@ -5,6 +5,7 @@ const usersHandler = require('../router/usersRouter');
 const morgan = require('morgan');
 
 app.use(morgan('dev'))
+app.use(express.json());
 // http://localhost:3000
 app.get("/", (req, res) => {
     res.status(200).json({ message: "Service is UP!" });

@@ -22,6 +22,17 @@ router.get("/", (req, res, next) => {
 //^      res.status(200).json(result.data);
 //^ });
 
+//* OPTION-3 use try/catch with async/await
+//^ router.get("/", async (req, res, next) => {
+//^     try {
+//^         const result = await usersServices();
+//^         res.status(200).json(result.data);
+//^     } catch (err) {
+//^         res.status(500).json(result.data);
+//^       }
+//^     });
+//^ });
+
 router.get("/:id", (req, res, next) => {
     const { id } = req.params;
     usersServicesById(id)
@@ -36,16 +47,5 @@ router.get("/:id", (req, res, next) => {
             });
         });
 });
-
-//* OPTION-3 use try/catch with async/await
-//^ router.get("/", async (req, res, next) => {
-//^     try {
-//^         const result = await usersServices();
-//^         res.status(200).json(result.data);
-//^     } catch (err) {
-//^         res.status(500).json(result.data);
-//^       }
-//^     });
-//^ });
 
 module.exports = router;
